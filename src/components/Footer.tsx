@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="footer-col">
             <h2>CivicConnect Portal</h2>
             <p style={{ marginBottom: '1rem' }}>
-              The official digital services platform for the City of Greater Geelong, delivering seamless access to municipal services, community programs, and local government decision-making.
+              The official digital services platform for the City of Harborview, delivering seamless access to municipal services, community programs, and local government decision-making.
             </p>
             <p style={{ fontSize: '0.85rem', color: '#94A3B8' }}>
-              The City of Greater Geelong acknowledges Wadawurrung Traditional Owners of this land and all Aboriginal and Torres Strait Islander Peoples who live and work here today.
+              The City of Harborview acknowledges Wadawurrung Traditional Owners of this land and all Aboriginal and Torres Strait Islander Peoples who live and work here today.
             </p>
           </div>
 
@@ -46,9 +46,9 @@ export default function Footer() {
           <div className="footer-col">
             <h3>Customer Service Centre</h3>
             <p style={{ marginBottom: '0.5rem' }}>
-              <strong>City of Greater Geelong</strong><br />
+              <strong>City of Harborview</strong><br />
               Wurriki Nyal, 137-149 Mercer Street<br />
-              Geelong VIC 3220, Australia
+              Harborview VIC 3220, Australia
             </p>
             <p style={{ marginBottom: '0.5rem' }}>
               <strong>Phone:</strong> <a href="tel:0352725272" style={{ color: '#93C5FD' }}>(03) 5272 5272</a><br />
@@ -63,7 +63,7 @@ export default function Footer() {
         {/* Footer Bottom Bar with Badges */}
         <div className="footer-bottom">
           <p style={{ fontSize: '0.85rem', color: '#94A3B8', margin: 0 }}>
-            &copy; {new Date().getFullYear()} City of Greater Geelong. Built with Next.js 14 and Drupal 11.
+            &copy; {new Date().getFullYear()} City of Harborview. Built with Next.js 14 and Drupal 11.
           </p>
 
           <div className="footer-badges" aria-label="Certifications and Architecture">

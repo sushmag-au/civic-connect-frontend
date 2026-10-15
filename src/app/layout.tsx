@@ -13,13 +13,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     template: 'CivicConnect | %s',
-    default: 'CivicConnect — City of Greater Geelong Council Portal',
+    default: 'CivicConnect — City of Harborview Council Portal',
   },
   description:
-    'CivicConnect is the official digital portal for the City of Greater Geelong, Victoria. Access council services, news updates, public events, planning information, and report civic issues 24/7.',
+    'CivicConnect is the official digital portal for the City of Harborview, Victoria. Access council services, news updates, public events, planning information, and report civic issues 24/7.',
   keywords: [
-    'City of Greater Geelong',
-    'Geelong Council',
+    'City of Harborview',
+    'Harborview Council',
     'Civic Services',
     'Waste & Recycling',
     'Planning Permits',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_AU',
-    siteName: 'CivicConnect — City of Greater Geelong',
-    title: 'CivicConnect — City of Greater Geelong Council Portal',
-    description: 'Empowering Geelong residents with rapid digital council services, civic news, and transparent local governance.',
+    siteName: 'CivicConnect — City of Harborview',
+    title: 'CivicConnect — City of Harborview Council Portal',
+    description: 'Empowering Harborview residents with rapid digital council services, civic news, and transparent local governance.',
   },
 }
 

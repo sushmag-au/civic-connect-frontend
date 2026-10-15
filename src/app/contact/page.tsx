@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm'
 export const metadata: Metadata = {
   title: 'Contact Council & Report an Issue',
   description:
-    'Contact the City of Greater Geelong council customer service centre, report municipal issues, find council addresses, operating hours, and telephone support.',
+    'Contact the City of Harborview council customer service centre, report municipal issues, find council addresses, operating hours, and telephone support.',
 }
 
 export default function ContactPage() {
@@ -17,7 +17,7 @@ export default function ContactPage() {
           <p className="section-kicker">We&apos;re Here to Help</p>
           <h1>Contact Us &amp; Report an Issue</h1>
           <p className="section-subtitle">
-            Submit a service request, report a civic maintenance problem, or connect with our customer service centre across Greater Geelong.
+            Submit a service request, report a civic maintenance problem, or connect with our customer service centre across Harborview.
           </p>
         </div>
 
@@ -44,9 +44,9 @@ export default function ContactPage() {
                   <span aria-hidden="true">🏛️</span> Civic Administration Centre
                 </h3>
                 <address style={{ fontStyle: 'normal', lineHeight: 1.6, color: '#334155', marginBottom: '1rem' }}>
-                  <strong>City of Greater Geelong</strong><br />
-                  70 Gheringhap St (Civic Precinct)<br />
-                  Geelong VIC 3220, Australia
+                  <strong>City of Harborview</strong><br />
+                  70 City Square Drive (Civic Precinct)<br />
+                  Harborview VIC 3220, Australia
                 </address>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.925rem' }}>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                     <a href="mailto:contactus@geelongcity.vic.gov.au">contactus@geelongcity.vic.gov.au</a>
                   </div>
                   <div>
-                    <strong>Postal Address:</strong> PO Box 104, Geelong VIC 3220
+                    <strong>Postal Address:</strong> PO Box 104, Harborview VIC 3220
                   </div>
                   <div>
                     <strong>Operating Hours:</strong> Monday &ndash; Friday: 8:30am &ndash; 5:00pm
@@ -104,12 +104,12 @@ export default function ContactPage() {
                   <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }} aria-hidden="true">
                     📍
                   </div>
-                  <strong style={{ fontSize: '1.1rem' }}>Geelong Civic Centre</strong>
+                  <strong style={{ fontSize: '1.1rem' }}>Harborview Civic Centre</strong>
                   <span style={{ fontSize: '0.85rem', color: '#94A3B8' }}>
-                    70 Gheringhap St, Geelong VIC 3220
+                    70 City Square Drive, Harborview VIC 3220
                   </span>
                   <a
-                    href="https://maps.google.com/?q=70+Gheringhap+St+Geelong+VIC+3220"
+                    href="https://maps.google.com/?q=70+Gheringhap+St+Harborview+VIC+3220"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-gold btn-sm"
@@ -119,7 +119,7 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div style={{ padding: '1rem', background: '#F8FAFC', fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
-                  Accessible parking bays and tactile ground indicators located at the primary Gheringhap St entrance.
+                  Accessible parking bays and tactile ground indicators located at the primary City Square Drive entrance.
                 </div>
               </div>
             </div>

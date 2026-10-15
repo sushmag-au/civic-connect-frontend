@@ -8,7 +8,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Council News & Media Releases',
   description:
-    'Official news releases, infrastructure milestones, sustainability announcements, and community updates from the City of Greater Geelong.',
+    'Official news releases, infrastructure milestones, sustainability announcements, and community updates from the City of Harborview.',
 }
 
 export default async function NewsListingPage() {
@@ -21,7 +21,7 @@ export default async function NewsListingPage() {
           <p className="section-kicker">Media &amp; Public Affairs</p>
           <h1>Council News &amp; Announcements</h1>
           <p className="section-subtitle">
-            Stay up to date with major regional projects, council decisions, public notices, and sustainability initiatives across Greater Geelong.
+            Stay up to date with major regional projects, council decisions, public notices, and sustainability initiatives across Harborview.
           </p>
         </div>
 

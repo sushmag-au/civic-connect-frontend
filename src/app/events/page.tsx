@@ -8,7 +8,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Community Events Calendar',
   description:
-    'Explore upcoming civic events, farmers markets, sustainability workshops, and community forums in the City of Greater Geelong.',
+    'Explore upcoming civic events, farmers markets, sustainability workshops, and community forums in the City of Harborview.',
 }
 
 export default async function EventsPage() {
@@ -23,7 +23,7 @@ export default async function EventsPage() {
     <div className="section">
       <div className="container">
         <div className="section-header">
-          <p className="section-kicker">What&apos;s On Across Greater Geelong</p>
+          <p className="section-kicker">What&apos;s On Across Harborview</p>
           <h1>Council &amp; Community Events</h1>
           <p className="section-subtitle">
             Connect with your local community. Browse upcoming civic forums, outdoor recreation walks, farmers markets, and council-sponsored events.
@@ -65,7 +65,7 @@ export default async function EventsPage() {
         >
           <h2 style={{ fontSize: '1.25rem' }}>Organising an Event on Public Land?</h2>
           <p style={{ color: 'var(--color-text-muted)', margin: 0 }}>
-            If you plan to run an event in a Geelong park, foreshore reserve, or closed road, you may require a Council Public Event Permit. Applications should be lodged at least 6 weeks prior to your event date.
+            If you plan to run an event in a Harborview park, foreshore reserve, or closed road, you may require a Council Public Event Permit. Applications should be lodged at least 6 weeks prior to your event date.
           </p>
           <div>
             <a href="mailto:events@geelongcity.vic.gov.au" className="btn btn-secondary btn-sm">

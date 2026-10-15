@@ -26,7 +26,7 @@ export default function Header() {
       <div className="top-bar">
         <div className="container top-bar-content">
           <div>
-            <span>Wadawurrung Country &bull; City of Greater Geelong</span>
+            <span>Harborview Country &bull; City of Harborview</span>
           </div>
           <div className="top-bar-links">
             <a href="tel:0352725272" aria-label="Call Council on 03 5272 5272">
@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container">
         <div className="nav-container">
           {/* Logo / Brand */}
-          <Link href="/" className="site-brand" aria-label="CivicConnect Home - City of Greater Geelong">
+          <Link href="/" className="site-brand" aria-label="CivicConnect Home - City of Harborview">
             <div className="brand-crest" aria-hidden="true">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -51,7 +51,7 @@ export default function Header() {
             </div>
             <div className="brand-text">
               <span className="brand-title">CivicConnect</span>
-              <span className="brand-subtitle">City of Greater Geelong</span>
+              <span className="brand-subtitle">City of Harborview</span>
             </div>
           </Link>
 

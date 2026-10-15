@@ -25,7 +25,7 @@ function parseDatePill(dateString: string): { day: string; month: string } {
 export default function EventCard({
   title,
   date,
-  location = 'City of Greater Geelong',
+  location = 'City of Harborview',
   category = 'Civic Event',
   summary,
   slug,

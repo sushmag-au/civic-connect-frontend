@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: NewsPageProps): Promise<Metad
     title: article.title,
     description: article.body.summary,
     openGraph: {
-      title: `${article.title} — Geelong Council News`,
+      title: `${article.title} — Harborview Council News`,
       description: article.body.summary,
       type: 'article',
       publishedTime: article.created,

@@ -28,7 +28,7 @@ export default async function HomePage() {
           <div className="hero-content">
             <div className="hero-kicker">
               <span aria-hidden="true">🏛️</span>
-              Official Digital Portal &bull; City of Greater Geelong
+              Official Digital Portal &bull; City of Harborview
             </div>
 
             <h1 id="hero-heading" className="hero-title">
@@ -36,7 +36,7 @@ export default async function HomePage() {
             </h1>
 
             <p className="hero-subtitle">
-              Your digital gateway to City of Greater Geelong council services, community programs, rates, waste management, and civic notices.
+              Your digital gateway to City of Harborview council services, community programs, rates, waste management, and civic notices.
             </p>
 
             <div className="hero-actions">
@@ -55,7 +55,7 @@ export default async function HomePage() {
             </div>
 
             {/* Stats Row */}
-            <div className="hero-stats" role="region" aria-label="Key Geelong Statistics">
+            <div className="hero-stats" role="region" aria-label="Key Harborview Statistics">
               <div className="stat-item">
                 <span className="stat-number">150+</span>
                 <span className="stat-label">Council Services</span>
@@ -118,7 +118,7 @@ export default async function HomePage() {
               <p className="section-kicker">Council Announcements</p>
               <h2 id="news-heading" style={{ marginBottom: '0.25rem' }}>Latest News &amp; Media Releases</h2>
               <p className="section-subtitle">
-                Stay informed with the latest project updates, policy decisions, and community initiatives across Geelong.
+                Stay informed with the latest project updates, policy decisions, and community initiatives across Harborview.
               </p>
             </div>
             <div>
@@ -152,7 +152,7 @@ export default async function HomePage() {
         <div className="container">
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '2rem', gap: '1rem' }}>
             <div>
-              <p className="section-kicker">What&apos;s On in Geelong</p>
+              <p className="section-kicker">What&apos;s On in Harborview</p>
               <h2 id="events-heading" style={{ marginBottom: '0.25rem' }}>Upcoming Civic &amp; Community Events</h2>
               <p className="section-subtitle">
                 Discover workshops, local farmers markets, environmental walks, and civic forums happening near you.
@@ -192,7 +192,7 @@ export default async function HomePage() {
             <div>
               <h2 style={{ fontSize: '1.85rem' }}>Need Help or Have a Question?</h2>
               <p>
-                Our Geelong-based customer care and digital services teams are ready to support your enquiries, application submissions, or maintenance requests.
+                Our Harborview-based customer care and digital services teams are ready to support your enquiries, application submissions, or maintenance requests.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

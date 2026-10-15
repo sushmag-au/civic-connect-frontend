@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title: service.title,
     description: service.body.summary,
     openGraph: {
-      title: `${service.title} — City of Greater Geelong`,
+      title: `${service.title} — City of Harborview`,
       description: service.body.summary,
       type: 'article',
     },
@@ -138,7 +138,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     >
                       <h4 style={{ marginBottom: '0.35rem' }}>Did this service information help?</h4>
                       <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
-                        The City of Greater Geelong is continually enhancing digital accessibility and municipal services.
+                        The City of Harborview is continually enhancing digital accessibility and municipal services.
                       </p>
                       <div style={{ display: 'flex', gap: '0.75rem' }}>
                         <Link href="/contact" className="btn btn-sm btn-secondary">

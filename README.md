@@ -1,196 +1,98 @@
-# CivicConnect — Next.js 14 Frontend
+# CivicConnect UI — Next.js 14 Decoupled Frontend
 
-[![Next.js 14](https://img.shields.io/badge/Next.js-14.2.5-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![React 18](https://img.shields.io/badge/React-18.3.1-blue?style=flat-square&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker)](https://www.docker.com/)
-[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG%202.1-AA%20Compliant-065F46?style=flat-square)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-[![Drupal 11](https://img.shields.io/badge/Drupal-11%20JSON%3AAPI-0077C0?style=flat-square&logo=drupal)](https://www.drupal.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=nextdotjs)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![WCAG](https://img.shields.io/badge/WCAG%202.1-AA-0057A8?style=flat-square)](https://www.w3.org/WAI/WCAG21/quickref/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-**CivicConnect** is a decoupled, modern frontend web application designed for municipal local government. It consumes a **Drupal 11 JSON:API backend** running at `http://localhost:8080`, providing citizens across the **City of Greater Geelong, Australia** with fast, resilient, and accessible civic services.
+A reference **Next.js 14 App Router** frontend for a decoupled Drupal 11 CMS. Demonstrates server-side rendering, incremental static regeneration (ISR), and WCAG 2.1 AA accessible design patterns for civic and government web portals.
 
-This project was architected as a demonstration portfolio piece for a **Senior Drupal Developer (Band 7 Local Government role)** at the City of Greater Geelong.
+> Pairs with [civic-connect-drupal](https://github.com/sushmag-au/civic-connect-drupal) — a headless Drupal 11 JSON:API backend.
 
----
-
-## 🏛️ Architecture Overview
-
-The application utilizes a decoupled / headless architecture where Drupal 11 serves as the structured content repository and editorial backend, while Next.js 14 delivers an edge-ready, accessible citizen portal using the React Server Components paradigm and Incremental Static Regeneration (ISR).
+## Architecture
 
 ```
-+-----------------------------------------------------------------------------------+
-|                           CITIZEN BROWSER / ASSISTIVE TECH                       |
-|                          (Desktop, Mobile, Screen Readers)                        |
-+-----------------------------------------------------------------------------------+
-                                         ▲
-                                         │  HTML / CSS / React Hydration
-                                         ▼
-+-----------------------------------------------------------------------------------+
-|                        CIVICCONNECT NEXT.JS 14 FRONTEND                          |
-|                        (Port 3000 / App Router / TypeScript)                      |
-|                                                                                   |
-|  +--------------------+   +-----------------------+   +------------------------+  |
-|  | Server Components  |   | Incremental Static    |   | Client Interactivity   |  |
-|  | (Layout, Homepage, |   | Regeneration (ISR 60s)|   | (Search, Filters,      |  |
-|  | Detail Pages)      |   | (Background Fetch)    |   | Contact Form)          |  |
-|  +--------------------+   +-----------------------+   +------------------------+  |
-|                                         ▲                                         |
-|                                         │ fetch() with ISR cache                  |
-|  +-----------------------------------------------------------------------------+  |
-|  |                      DRUPAL CLIENT LIBRARY (src/lib/drupal.ts)              |  |
-|  |  * Typed JSON:API normalizer     * Auto-mock fallback for standalone demo  |  |
-|  +-----------------------------------------------------------------------------+  |
-+-----------------------------------------------------------------------------------+
-                                         ▲
-                                         │  JSON:API (application/vnd.api+json)
-                                         ▼
-+-----------------------------------------------------------------------------------+
-|                             DRUPAL 11 HEADLESS BACKEND                            |
-|                            (Port 8080 / JSON:API Core)                            |
-|                                                                                   |
-|  +------------------------+  +------------------------+  +---------------------+  |
-|  | Node: Service          |  | Node: News Article     |  | Node: Event         |  |
-|  | (Waste, Permits, Rates)|  | (Announcements)        |  | (Civic Events)      |  |
-|  +------------------------+  +------------------------+  +---------------------+  |
-|  +------------------------+  +------------------------+  +---------------------+  |
-|  | Taxonomy: Categories   |  | Path Aliases (Pathauto)|  | Metatag / JSON:API  |  |
-|  +------------------------+  +------------------------+  +---------------------+  |
-+-----------------------------------------------------------------------------------+
+Drupal 11 (JSON:API) ──────► Next.js 14 App Router ──────► Browser
+   Port 8080                     Port 3000
+   /jsonapi/node/service          /services
+   /jsonapi/node/news_article     /news
+   /jsonapi/node/event            /events
 ```
 
----
+## Features
 
-## ✨ Key Features
+- **Next.js 14 App Router** — Server Components, layouts, loading states
+- **ISR** — Incremental Static Regeneration with 60-second revalidation
+- **Drupal JSON:API client** — Typed fetch helpers with graceful mock fallback
+- **WCAG 2.1 AA** — Skip navigation, focus management, aria labels, reduced motion
+- **Design system** — CSS custom properties, responsive grid, accessible components
+- **SEO** — Metadata API driven by Drupal Metatag module
+- **TypeScript** — Full type coverage across API responses and components
 
-- **Next.js 14 App Router & Server Components:** Zero-bundle-overhead server rendering for fast initial load times and high SEO indexability.
-- **Incremental Static Regeneration (ISR):** Pages statically generate at build time and revalidate in the background every 60 seconds (`next: { revalidate: 60 }`), offering CDN-speed performance with dynamic Drupal content freshness.
-- **Resilient Fallback Mode:** When Drupal is offline or during offline portfolio presentations, the client automatically falls back to comprehensive mock datasets for the City of Greater Geelong without throwing errors.
-- **WCAG 2.1 Level AA Accessibility:**
-  - High contrast 3px focus-visible rings with generous offset.
-  - Skip navigation link (`.skip-link`) jumping straight to `#main-content`.
-  - Accessible landmarks (`<header>`, `<main>`, `<footer>`, `<nav>`, `<article>`, `<aside>`).
-  - Semantic HTML headings hierarchy (`h1` &rarr; `h2` &rarr; `h3`).
-  - Screen-reader text alternatives and ARIA states (`aria-expanded`, `aria-current`, `aria-label`).
-  - Respects `@media (prefers-reduced-motion: reduce)`.
-- **Government Design Aesthetic:** Strict civic styling using City of Greater Geelong navy (`#1B3A6B`), council blue (`#0057A8`), and accessible amber gold accents (`#D98200`).
-- **Interactive Directory:** Client-side instant filtering across service categories with instant keyword search.
-- **Full Route Hierarchy:** Dedicated detail pages for every service and news release with metadata generation for search engines and social cards.
+## Tech Stack
 
----
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript 5 |
+| Styling | CSS Modules + custom properties |
+| CMS | Drupal 11 via JSON:API |
+| Deployment | Vercel |
+| CI/CD | GitHub Actions |
 
-## 🔌 API Integration Details
+## Routes
 
-The client communicates with Drupal 11's core `jsonapi` module located at `DRUPAL_BASE_URL`.
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage — hero, services grid, news, events |
+| `/services` | Services listing with category filter |
+| `/services/[slug]` | Dynamic service detail page |
+| `/news` | News article listing |
+| `/news/[slug]` | Dynamic news article detail |
+| `/events` | Upcoming events listing |
+| `/contact` | Contact form |
 
-### Consumed Endpoints
+## Quick Start
 
-| Resource | Drupal JSON:API Endpoint | Query Parameters |
-| :--- | :--- | :--- |
-| **Services** | `/jsonapi/node/service` | `?include=field_service_category&sort=-changed` |
-| **Service Detail** | `/jsonapi/node/service` | `?filter[alias-filter][condition][path]=path.alias&filter[alias-filter][condition][value]=/services/:slug&include=field_service_category` |
-| **News Articles** | `/jsonapi/node/news` | `?include=field_news_category&sort=-created` |
-| **News Detail** | `/jsonapi/node/news` | `?filter[alias-filter][condition][path]=path.alias&filter[alias-filter][condition][value]=/news/:slug&include=field_news_category` |
-| **Events** | `/jsonapi/node/event` | `?include=field_event_category&sort=field_event_date` |
-
-### Typed JSON:API Transformation
-
-Drupal JSON:API responses return raw entity relationships. `src/lib/drupal.ts` normalizes these into clean, strongly typed TypeScript entities (`DrupalService`, `DrupalNewsArticle`, `DrupalEvent`).
-
-```typescript
-// Sample ISR request in src/lib/drupal.ts
-const response = await fetch(`${DRUPAL_BASE_URL}/jsonapi/node/service`, {
-  headers: {
-    'Content-Type': 'application/vnd.api+json',
-    'Accept': 'application/vnd.api+json'
-  },
-  next: { revalidate: 60 } // Incremental Static Regeneration
-})
-```
-
----
-
-## 🗺️ Application Routes
-
-| Route | Type | Description |
-| :--- | :--- | :--- |
-| `/` | Server Component | Homepage featuring Hero, 6 Services, 3 News, 3 Events, Stats & CTA Banner |
-| `/services` | Server + Client | Full searchable & filterable directory of all council services |
-| `/services/[slug]` | ISR Dynamic Page | Detailed council service overview, steps, department details & related services |
-| `/news` | Server Component | Comprehensive listing of municipal media releases and announcements |
-| `/news/[slug]` | ISR Dynamic Page | Full editorial news release article with publication metadata |
-| `/events` | Server Component | Chronological community events calendar with date pills and locations |
-| `/contact` | Server + Client | Civic administration address, emergency dispatch info & interactive contact form |
-
----
-
-## 🛠️ Local Development
-
-### Option 1: Standalone Mode (With Built-in Mock Data)
-
-The application includes complete mock data mirroring City of Greater Geelong services. You do **not** need a running Drupal instance to inspect or run this project:
-
+### With Drupal backend
 ```bash
-# 1. Navigate to the project directory
-cd /Users/Sushma/.gemini/antigravity/scratch/drupal-portfolio/civic-connect-frontend
-
-# 2. Install dependencies
+git clone https://github.com/sushmag-au/civic-connect-frontend.git
+cd civic-connect-frontend
 npm install
-
-# 3. Start development server
+cp .env.local.example .env.local
+# Set DRUPAL_BASE_URL to your Drupal instance
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Option 2: Connected to Drupal 11 Backend
-
-1. Ensure Drupal 11 is running at `http://localhost:8080`.
-2. Copy the sample environment file:
-   ```bash
-   cp .env.local.example .env.local
-   ```
-3. Verify `DRUPAL_BASE_URL` in `.env.local`:
-   ```env
-   DRUPAL_BASE_URL=http://localhost:8080
-   NEXT_PUBLIC_SITE_NAME=CivicConnect
-   ```
-4. Start Next.js:
-   ```bash
-   npm run dev
-   ```
-
-### Option 3: Docker Compose
-
-To run the containerized frontend alongside Drupal:
+### Standalone (mock data)
 ```bash
-docker compose up -d --build
+npm install && npm run dev
+# Runs on http://localhost:3000 with built-in mock data — no Drupal needed
 ```
 
----
+## Environment Variables
 
-## ⚙️ Environment Variables
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `DRUPAL_BASE_URL` | `http://localhost:8080` | Drupal backend URL |
+| `NEXT_PUBLIC_SITE_NAME` | `CivicConnect` | Site display name |
 
-| Variable | Default Value | Description |
-| :--- | :--- | :--- |
-| `DRUPAL_BASE_URL` | `http://localhost:8080` | URL of the Drupal 11 JSON:API backend |
-| `NEXT_PUBLIC_SITE_NAME` | `CivicConnect` | Branding title displayed in metadata |
-| `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Canonical base URL for OpenGraph metadata |
+## API Integration
 
----
+The `src/lib/drupal.ts` client fetches from Drupal JSON:API with ISR:
+```typescript
+const services = await getServices() // tries Drupal, falls back to mock data
+```
 
-## 🚀 CI/CD Pipeline
+All fetch functions implement graceful fallback — the frontend works standalone without a running Drupal instance, making local development and demos straightforward.
 
-A GitHub Actions workflow is preconfigured in `.github/workflows/ci.yml`. On every `push` and `pull_request` to `main`, the pipeline automatically executes:
-1. Environment checkout on `ubuntu-latest` with Node.js 20.
-2. Clean dependency installation (`npm ci`).
-3. ESLint verification (`npm run lint`).
-4. Production production build (`npm run build`) to ensure type safety and error-free static generation.
+## CI/CD
 
----
+GitHub Actions runs on every push:
+- ESLint — code quality checks
+- `next build` — production build verification
 
-## 👤 Developer Profile
+## Developer
 
-- **Author:** Sushma Gogula
-- **Email:** gsushma511@gmail.com
-- **Role:** Senior Drupal & Full-Stack Developer
-- **Target Position:** Band 7 Senior Drupal Developer, City of Greater Geelong
+**Sushma Gogula** — [github.com/sushmag-au](https://github.com/sushmag-au) · [linkedin.com/in/gsushma-au](https://linkedin.com/in/gsushma-au)

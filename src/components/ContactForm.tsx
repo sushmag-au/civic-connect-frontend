@@ -68,7 +68,7 @@ export default function ContactForm() {
           Enquiry Received Successfully
         </h3>
         <p style={{ color: '#047857', maxWidth: '500px', margin: '0 auto 1.25rem', fontSize: '1rem' }}>
-          Thank you for contacting the City of Greater Geelong. Your message has been routed to the relevant municipal services team.
+          Thank you for contacting the City of Harborview. Your message has been routed to the relevant municipal services team.
         </p>
         <div
           style={{

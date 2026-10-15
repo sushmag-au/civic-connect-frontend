@@ -3,7 +3,7 @@
  * 
  * Production-ready client library with ISR revalidation, typed interfaces,
  * robust error handling, and realistic mock fallbacks for standalone portfolio demonstrations.
- * Configured for City of Greater Geelong Council Services.
+ * Configured for City of Harborview Council Services.
  */
 
 const DRUPAL_BASE_URL = process.env.DRUPAL_BASE_URL || 'http://localhost:8080'
@@ -136,7 +136,7 @@ function normalizeEvent(item: any, included: any[] = []): DrupalEvent {
       summary: item.attributes?.body?.summary || '',
     },
     field_event_date: item.attributes?.field_event_date || item.attributes?.created || new Date().toISOString(),
-    field_event_location: item.attributes?.field_event_location || 'City of Greater Geelong',
+    field_event_location: item.attributes?.field_event_location || 'City of Harborview',
     field_event_category: {
       name: categoryName,
     },
@@ -253,10 +253,10 @@ export const MOCK_SERVICES: DrupalService[] = [
     id: 'srv-001',
     title: 'Waste & Recycling Collection',
     body: {
-      summary: 'Kerbside bin collection schedules, hard waste booking, green organics, and recycling sorting guidelines for Geelong households.',
+      summary: 'Kerbside bin collection schedules, hard waste booking, green organics, and recycling sorting guidelines for Harborview households.',
       value: `
-        <h3>Residential Waste & Recycling in Greater Geelong</h3>
-        <p>The City of Greater Geelong operates a comprehensive kerbside collection service for over 120,000 households across Geelong, the Bellarine Peninsula, and the northern suburbs. Our three-bin system ensures that valuable organic matter and recyclable resources are diverted from landfill.</p>
+        <h3>Residential Waste & Recycling in Harborview</h3>
+        <p>The City of Harborview operates a comprehensive kerbside collection service for over 120,000 households across Harborview, the coastal peninsula, and the northern suburbs. Our three-bin system ensures that valuable organic matter and recyclable resources are diverted from landfill.</p>
         
         <h4>Collection Bins & Colours</h4>
         <ul>
@@ -284,12 +284,12 @@ export const MOCK_SERVICES: DrupalService[] = [
     body: {
       summary: 'Apply for planning permits, lodge building applications, check zoning overlays, and track assessment progress online.',
       value: `
-        <h3>Planning & Development in Greater Geelong</h3>
-        <p>Whether you are extending your home, constructing a multi-unit development, or opening a business in central Geelong, our statutory planning and building teams are here to guide you through Victorian planning regulations.</p>
+        <h3>Planning & Development in Harborview</h3>
+        <p>Whether you are extending your home, constructing a multi-unit development, or opening a business in central Harborview, our statutory planning and building teams are here to guide you through Victorian planning regulations.</p>
 
         <h4>Online Planning Portal Capabilities</h4>
         <ul>
-          <li><strong>Preliminary Property Assessment:</strong> Verify whether your property requires a planning permit under Greater Geelong Planning Scheme overlays (Heritage, Bushfire, Inundation).</li>
+          <li><strong>Preliminary Property Assessment:</strong> Verify whether your property requires a planning permit under Harborview Planning Scheme overlays (Heritage, Bushfire, Inundation).</li>
           <li><strong>Electronic Lodgement (VicSmart):</strong> Fast-track eligible minor applications within 10 business days.</li>
           <li><strong>Application Tracking:</strong> Track real-time milestone updates, view public notices, and download stamped plans directly.</li>
         </ul>
@@ -310,7 +310,7 @@ export const MOCK_SERVICES: DrupalService[] = [
       summary: 'Pay council rates securely online, apply for pensioner concessions, set up direct debits, or submit valuation objections.',
       value: `
         <h3>Rates & Municipal Charges 2026-2027</h3>
-        <p>Your council rates fund more than 150 essential services and infrastructure projects across Greater Geelong, including local roads, coastal paths, libraries, sporting pavilions, immunisation sessions, and parks maintenance.</p>
+        <p>Your council rates fund more than 150 essential services and infrastructure projects across Harborview, including local roads, coastal paths, libraries, sporting pavilions, immunisation sessions, and parks maintenance.</p>
 
         <h4>Flexible Payment Options</h4>
         <ul>
@@ -335,12 +335,12 @@ export const MOCK_SERVICES: DrupalService[] = [
       summary: 'Discover over 300 public parks, book sports pavilions, explore coastal walking trails, and report maintenance needs.',
       value: `
         <h3>Active Spaces & Natural Environments</h3>
-        <p>Greater Geelong is renowned for its diverse natural landscape, stretching from the Barwon River parklands to the Bellarine coastal foreshore and the You Yangs regional fringe.</p>
+        <p>Harborview is renowned for its diverse natural landscape, stretching from the Harborview River parklands to the Bellarine coastal foreshore and the Coastal Ranges regional fringe.</p>
 
         <h4>Featured Facilities & Assets</h4>
         <ul>
-          <li><strong>Johnstone Park & Geelong Botanic Gardens:</strong> Historic botanical collections, heritage pavilions, and community event zones.</li>
-          <li><strong>Barwon River Trail:</strong> Over 20km of continuous sealed shared trail for cycling, walking, and running.</li>
+          <li><strong>Johnstone Park & Harborview Botanic Gardens:</strong> Historic botanical collections, heritage pavilions, and community event zones.</li>
+          <li><strong>Harborview River Trail:</strong> Over 20km of continuous sealed shared trail for cycling, walking, and running.</li>
           <li><strong>Inclusive Playgrounds:</strong> All-abilities sensory play equipment at Rippleside Park, Poppy Kettle, and Armstrong Creek Regional Park.</li>
         </ul>
 
@@ -359,8 +359,8 @@ export const MOCK_SERVICES: DrupalService[] = [
     body: {
       summary: 'Register your dog or cat, renew microchip records, locate lost pets, and find designated off-leash exercise reserves.',
       value: `
-        <h3>Responsible Pet Ownership in Geelong</h3>
-        <p>Under Victorian state legislation (Domestic Animals Act 1994), all dogs and cats over the age of three months must be microchipped and registered with the City of Greater Geelong.</p>
+        <h3>Responsible Pet Ownership in Harborview</h3>
+        <p>Under Victorian state legislation (Domestic Animals Act 1994), all dogs and cats over the age of three months must be microchipped and registered with the City of Harborview.</p>
 
         <h4>Registration Benefits</h4>
         <ul>
@@ -391,7 +391,7 @@ export const MOCK_SERVICES: DrupalService[] = [
         <ul>
           <li><strong>Local Urban & Rural Roads:</strong> Bitumen surfacing, curb repair, linemarking, and pothole rectification.</li>
           <li><strong>Pedestrian Networks:</strong> Trip hazard grinding, concrete replacement, tactile pavers, and accessibility ramps.</li>
-          <li><strong>Street Sweeping:</strong> Scheduled monthly sweeping cycles across residential corridors and daily sweeping in Central Geelong retail areas.</li>
+          <li><strong>Street Sweeping:</strong> Scheduled monthly sweeping cycles across residential corridors and daily sweeping in Central Harborview retail areas.</li>
         </ul>
 
         <p><em>Note: Major arterial highways (Princes Freeway, Bellarine Highway, Surf Coast Highway) are managed directly by VicRoads / Department of Transport and Planning.</em></p>
@@ -407,13 +407,13 @@ export const MOCK_SERVICES: DrupalService[] = [
 export const MOCK_NEWS: DrupalNewsArticle[] = [
   {
     id: 'news-001',
-    title: 'Geelong Waterfront Revitalisation Stage 3 Underway',
+    title: 'Harborview Waterfront Revitalisation Stage 3 Underway',
     body: {
       summary: 'Construction begins on the landmark stage 3 Western Beach promenade upgrade, enhancing accessible walkways, shade structures, and native coastal flora.',
       value: `
-        <p>The City of Greater Geelong has officially commenced civil construction on Stage 3 of the Western Beach Promenade Master Plan. This $14.2 million joint initiative funded by Council and the Victorian State Government will revitalise 1.2 kilometres of prime foreshore.</p>
+        <p>The City of Harborview has officially commenced civil construction on Stage 3 of the Harborview Foreshore Promenade Master Plan. This $14.2 million joint initiative funded by Council and the Victorian State Government will revitalise 1.2 kilometres of prime foreshore.</p>
         <p>Key enhancements include expanded 4-metre-wide shared pedestrian and cycle paths, smart solar public lighting, high-spec WCAG-compliant ramp access to the tidal baths, and over 4,500 indigenous coastal species planted to stabilise coastal dunes.</p>
-        <p>"Our waterfront is the crown jewel of Greater Geelong," said the Council's Director of City Infrastructure. "Stage 3 will deliver an inclusive, resilient civic space that residents and visitors will treasure for generations."</p>
+        <p>"Our waterfront is the crown jewel of Harborview," said the Council's Director of City Infrastructure. "Stage 3 will deliver an inclusive, resilient civic space that residents and visitors will treasure for generations."</p>
       `,
     },
     field_news_category: { name: 'Infrastructure & Major Projects' },
@@ -425,10 +425,10 @@ export const MOCK_NEWS: DrupalNewsArticle[] = [
     id: 'news-002',
     title: 'New Community Hub and Library Opens in Armstrong Creek',
     body: {
-      summary: 'The state-of-the-art Bunjil Community Centre officially opens its doors, featuring contemporary learning spaces, kindergarten suites, and Geelong Regional Library services.',
+      summary: 'The state-of-the-art Harborview Community Centre officially opens its doors, featuring contemporary learning spaces, kindergarten suites, and Harborview Regional Library services.',
       value: `
-        <p>Residents across Armstrong Creek and Mount Duneed can now access world-class community and family services with the official opening of the Bunjil Community Centre.</p>
-        <p>The facility features a 5-star Green Star environmental rating, a modern branch of Geelong Regional Libraries containing over 25,000 physical and digital items, two maternal and child health consulting rooms, multipurpose youth recreation zones, and community meeting rooms available for evening hire.</p>
+        <p>Residents across Armstrong Creek and Mount Duneed can now access world-class community and family services with the official opening of the Harborview Community Centre.</p>
+        <p>The facility features a 5-star Green Star environmental rating, a modern branch of Harborview Regional Libraries containing over 25,000 physical and digital items, two maternal and child health consulting rooms, multipurpose youth recreation zones, and community meeting rooms available for evening hire.</p>
       `,
     },
     field_news_category: { name: 'Community' },
@@ -440,7 +440,7 @@ export const MOCK_NEWS: DrupalNewsArticle[] = [
     id: 'news-003',
     title: 'Council Endorses 2026-2030 Climate Emergency Action Plan',
     body: {
-      summary: 'Greater Geelong commits to accelerating municipal decarbonisation, expanding urban forest canopy by 30%, and powering all civic facilities with 100% renewable energy.',
+      summary: 'Harborview commits to accelerating municipal decarbonisation, expanding urban forest canopy by 30%, and powering all civic facilities with 100% renewable energy.',
       value: `
         <p>At Tuesday evening's Council Meeting, Councillors unanimously endorsed the ambitious 2026-2030 Climate Emergency Action Plan following comprehensive community consultation with over 3,000 local stakeholders.</p>
         <p>The roadmap targets net-zero operational greenhouse gas emissions for all Council assets by 2028, supported by solar installations across 42 municipal buildings, transition of the light vehicle fleet to battery electric vehicles, and planting 50,000 street trees.</p>
@@ -457,7 +457,7 @@ export const MOCK_NEWS: DrupalNewsArticle[] = [
     body: {
       summary: 'Enhanced weekly organic recycling collection diverts 18,000 tonnes of household food scraps from regional landfills each year.',
       value: `
-        <p>Greater Geelong's Food Organics & Garden Organics (FOGO) service is expanding with new compostable kitchen caddy deliveries to multi-unit developments and apartments.</p>
+        <p>Harborview's Food Organics & Garden Organics (FOGO) service is expanding with new compostable kitchen caddy deliveries to multi-unit developments and apartments.</p>
         <p>All organic matter collected through the lime-green lid service is transported to a commercial composting facility near Anakie, producing nutrient-rich compost utilised by local Victorian farms and council botanic reserves.</p>
       `,
     },
@@ -471,16 +471,16 @@ export const MOCK_NEWS: DrupalNewsArticle[] = [
 export const MOCK_EVENTS: DrupalEvent[] = [
   {
     id: 'evt-001',
-    title: 'Geelong Waterfront Farmers & Artisans Market',
+    title: 'Harborview Waterfront Farmers & Artisans Market',
     body: {
-      summary: 'Showcasing fresh Bellarine Peninsula produce, artisan breads, local cheeses, and handmade crafts on the picturesque Geelong foreshore.',
+      summary: 'Showcasing fresh coastal peninsula produce, artisan breads, local cheeses, and handmade crafts on the picturesque Harborview foreshore.',
       value: `
         <p>Join us at Steampacket Gardens for the premier monthly farmers market in the Barwon South West region. Meet passionate local growers, enjoy live acoustic performances from regional musicians, and savour gourmet breakfast options.</p>
-        <p>This event is fully accessible, dog-friendly (on leash), and supported by City of Greater Geelong's waste-wise events program.</p>
+        <p>This event is fully accessible, dog-friendly (on leash), and supported by City of Harborview's waste-wise events program.</p>
       `,
     },
     field_event_date: '2026-10-24T09:00:00Z',
-    field_event_location: 'Steampacket Gardens, Eastern Beach, Geelong VIC 3220',
+    field_event_location: 'Harborview Waterfront Reserve, Harborview VIC 3220',
     field_event_category: { name: 'Community Market' },
     path: { alias: '/events/waterfront-farmers-market' },
   },
@@ -488,14 +488,14 @@ export const MOCK_EVENTS: DrupalEvent[] = [
     id: 'evt-002',
     title: "Mayor's Sustainable Business & Innovation Forum",
     body: {
-      summary: 'A strategic conference connecting Geelong regional enterprises, clean-tech startups, and municipal procurement leaders.',
+      summary: 'A strategic conference connecting Harborview regional enterprises, clean-tech startups, and municipal procurement leaders.',
       value: `
-        <p>The Mayor of the City of Greater Geelong invites local business owners, technology innovators, and industry leaders to the 2026 Sustainable Business & Innovation Forum.</p>
+        <p>The Mayor of the City of Harborview invites local business owners, technology innovators, and industry leaders to the 2026 Sustainable Business & Innovation Forum.</p>
         <p>Keynote speakers will address circular economy supply chains, ESG reporting compliance, and upcoming municipal grant opportunities for local enterprises.</p>
       `,
     },
     field_event_date: '2026-11-05T18:00:00Z',
-    field_event_location: 'Geelong Arts Centre, 50 Little Malop St, Geelong VIC 3220',
+    field_event_location: 'Harborview Arts Centre, 25 Civic Square Drive, Harborview VIC 3220',
     field_event_category: { name: 'Civic Forum' },
     path: { alias: '/events/sustainable-business-forum' },
   },
@@ -503,9 +503,9 @@ export const MOCK_EVENTS: DrupalEvent[] = [
     id: 'evt-003',
     title: 'Family Biodiversity Nature Walk & Wildlife Workshop',
     body: {
-      summary: 'Explore native birdlife, wetlands ecology, and microbat habitats with City of Greater Geelong conservation rangers.',
+      summary: 'Explore native birdlife, wetlands ecology, and microbat habitats with City of Harborview conservation rangers.',
       value: `
-        <p>Bring the family to Balyang Sanctuary for a guided twilight nature walk led by Council biodiversity officers. Learn about native waterbirds, freshwater fish populations, and river health along the Barwon River corridor.</p>
+        <p>Bring the family to Balyang Sanctuary for a guided twilight nature walk led by Council biodiversity officers. Learn about native waterbirds, freshwater fish populations, and river health along the Harborview River corridor.</p>
         <p>Binoculars and nature spotter checklists provided. Suitable for children aged 5 and older accompanied by an adult.</p>
       `,
     },
