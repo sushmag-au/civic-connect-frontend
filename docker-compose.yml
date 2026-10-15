@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: civic-connect-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DRUPAL_BASE_URL=http://drupal:8080
+      - NEXT_PUBLIC_SITE_NAME=CivicConnect
+    networks:
+      - civic-network
+
+networks:
+  civic-network:
+    name: civic-connect-network
+    driver: bridge
