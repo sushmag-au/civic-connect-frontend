@@ -1,10 +1,13 @@
 # CivicConnect UI — Next.js 14 Decoupled Frontend
 
+[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://civic-connect-frontend-flame.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=nextdotjs)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![WCAG](https://img.shields.io/badge/WCAG%202.1-AA-0057A8?style=flat-square)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+
+> 🚀 **Live Demo:** [https://civic-connect-frontend-flame.vercel.app](https://civic-connect-frontend-flame.vercel.app/)
 
 A reference **Next.js 14 App Router** frontend for a decoupled Drupal 11 CMS. Demonstrates server-side rendering, incremental static regeneration (ISR), and WCAG 2.1 AA accessible design patterns for civic and government web portals.
 
