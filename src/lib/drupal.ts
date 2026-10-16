@@ -100,20 +100,33 @@ function normalizeService(item: any, included: any[] = []): DrupalService {
 function normalizeNewsArticle(item: any, included: any[] = []): DrupalNewsArticle {
   const categoryRelId = item.relationships?.field_news_category?.data?.id
   const matchedTerm = included.find((inc: any) => inc.id === categoryRelId)
-  const categoryName = matchedTerm?.attributes?.name || item.attributes?.field_news_category_name || 'Council News'
+  const categoryName =
+    matchedTerm?.attributes?.name ||
+    (typeof item.attributes?.field_news_category === 'string' ? item.attributes.field_news_category : null) ||
+    item.attributes?.field_news_category_name ||
+    'Council News'
+
+  const rawBody = item.attributes?.body?.value || item.attributes?.field_body || ''
+  const summary =
+    item.attributes?.body?.summary ||
+    (rawBody ? rawBody.replace(/<[^>]*>?/gm, '').replace(/[\r\n]+/g, ' ').trim().slice(0, 160) + '...' : '')
+
+  const generatedSlug = item.attributes?.title
+    ? item.attributes.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    : item.id
 
   return {
     id: item.id,
     title: item.attributes?.title || 'Untitled News',
     body: {
-      value: item.attributes?.body?.value || '',
-      summary: item.attributes?.body?.summary || '',
+      value: rawBody,
+      summary: summary,
     },
     field_news_category: {
       name: categoryName,
     },
     path: {
-      alias: item.attributes?.path?.alias || `/news/${item.id}`,
+      alias: item.attributes?.path?.alias || `/news/${generatedSlug}`,
     },
     created: item.attributes?.created || item.attributes?.changed || new Date().toISOString(),
     changed: item.attributes?.changed || new Date().toISOString(),
@@ -195,7 +208,7 @@ export async function getService(slug: string): Promise<DrupalService | null> {
  */
 export async function getNewsArticles(): Promise<DrupalNewsArticle[]> {
   try {
-    const json = await fetchFromDrupal<any>('/jsonapi/node/news?include=field_news_category&sort=-created')
+    const json = await fetchFromDrupal<any>('/jsonapi/node/news?sort=-created')
     if (json?.data && Array.isArray(json.data) && json.data.length > 0) {
       return json.data.map((item: any) => normalizeNewsArticle(item, json.included || []))
     }
@@ -210,13 +223,12 @@ export async function getNewsArticles(): Promise<DrupalNewsArticle[]> {
  */
 export async function getNewsArticle(slug: string): Promise<DrupalNewsArticle | null> {
   try {
-    const encoded = encodeURIComponent(slug)
-    const json = await fetchFromDrupal<any>(
-      `/jsonapi/node/news?filter[alias-filter][condition][path]=path.alias&filter[alias-filter][condition][value]=/news/${encoded}&include=field_news_category`
-    )
-    if (json?.data && json.data.length > 0) {
-      return normalizeNewsArticle(json.data[0], json.included || [])
-    }
+    const articles = await getNewsArticles()
+    const found = articles.find((article) => {
+      const articleSlug = extractSlug(article.path.alias, article.id)
+      return articleSlug.toLowerCase() === slug.toLowerCase() || article.id === slug
+    })
+    if (found) return found
   } catch (error) {
     console.warn(`[Drupal API] Could not fetch news article '${slug}', checking mock data.`)
   }
