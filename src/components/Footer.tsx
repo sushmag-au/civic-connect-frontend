@@ -13,7 +13,7 @@ export default function Footer() {
               The official digital services platform for the City of Harborview, delivering seamless access to municipal services, community programs, and local government decision-making.
             </p>
             <p style={{ fontSize: '0.85rem', color: '#94A3B8' }}>
-              The City of Harborview acknowledges Wadawurrung Traditional Owners of this land and all Aboriginal and Torres Strait Islander Peoples who live and work here today.
+              The City of Harborview acknowledges Harborview Traditional Owners of this land and all Aboriginal and Torres Strait Islander Peoples who live and work here today.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
               <strong>Hours:</strong> Mon &ndash; Fri: 8:30am &ndash; 5:00pm
             </p>
             <p>
-              <strong>Email:</strong> <a href="mailto:contactus@geelongcity.vic.gov.au" style={{ color: '#93C5FD' }}>contactus@geelongcity.vic.gov.au</a>
+              <strong>Email:</strong> <a href="mailto:contactus@harborview.vic.gov.au" style={{ color: '#93C5FD' }}>contactus@harborview.vic.gov.au</a>
             </p>
           </div>
         </div>

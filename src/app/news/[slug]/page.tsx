@@ -131,7 +131,7 @@ export default async function NewsDetailPage({ params }: NewsPageProps) {
                   &larr; Back to all News Releases
                 </Link>
                 <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
-                  Media enquiries: media@geelongcity.vic.gov.au
+                  Media enquiries: media@harborview.vic.gov.au
                 </span>
               </div>
             </article>

@@ -245,7 +245,7 @@ export async function getEvents(): Promise<DrupalEvent[]> {
 }
 
 /* =========================================================================
-   MOCK DATA (CITY OF GREATER GEELONG REALISTIC CIVIC DATA)
+   MOCK DATA (CITY OF HARBORVIEW REALISTIC CIVIC DATA)
    ========================================================================= */
 
 export const MOCK_SERVICES: DrupalService[] = [
@@ -335,7 +335,7 @@ export const MOCK_SERVICES: DrupalService[] = [
       summary: 'Discover over 300 public parks, book sports pavilions, explore coastal walking trails, and report maintenance needs.',
       value: `
         <h3>Active Spaces & Natural Environments</h3>
-        <p>Harborview is renowned for its diverse natural landscape, stretching from the Harborview River parklands to the Bellarine coastal foreshore and the Coastal Ranges regional fringe.</p>
+        <p>Harborview is renowned for its diverse natural landscape, stretching from the Harborview River parklands to the Harborview coastal foreshore and the Coastal Ranges regional fringe.</p>
 
         <h4>Featured Facilities & Assets</h4>
         <ul>
@@ -394,7 +394,7 @@ export const MOCK_SERVICES: DrupalService[] = [
           <li><strong>Street Sweeping:</strong> Scheduled monthly sweeping cycles across residential corridors and daily sweeping in Central Harborview retail areas.</li>
         </ul>
 
-        <p><em>Note: Major arterial highways (Princes Freeway, Bellarine Highway, Surf Coast Highway) are managed directly by VicRoads / Department of Transport and Planning.</em></p>
+        <p><em>Note: Major arterial highways (Metro Freeway, Coastal Highway, Coastal Highway) are managed directly by State Roads Authority / Department of Transport and Planning.</em></p>
       `,
     },
     field_service_category: { name: 'Infrastructure' },
@@ -475,7 +475,7 @@ export const MOCK_EVENTS: DrupalEvent[] = [
     body: {
       summary: 'Showcasing fresh coastal peninsula produce, artisan breads, local cheeses, and handmade crafts on the picturesque Harborview foreshore.',
       value: `
-        <p>Join us at Steampacket Gardens for the premier monthly farmers market in the Barwon South West region. Meet passionate local growers, enjoy live acoustic performances from regional musicians, and savour gourmet breakfast options.</p>
+        <p>Join us at Harborview Waterfront Gardens for the premier monthly farmers market in the Harborview region region. Meet passionate local growers, enjoy live acoustic performances from regional musicians, and savour gourmet breakfast options.</p>
         <p>This event is fully accessible, dog-friendly (on leash), and supported by City of Harborview's waste-wise events program.</p>
       `,
     },

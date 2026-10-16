@@ -68,7 +68,7 @@ export default async function EventsPage() {
             If you plan to run an event in a Harborview park, foreshore reserve, or closed road, you may require a Council Public Event Permit. Applications should be lodged at least 6 weeks prior to your event date.
           </p>
           <div>
-            <a href="mailto:events@geelongcity.vic.gov.au" className="btn btn-secondary btn-sm">
+            <a href="mailto:events@harborview.vic.gov.au" className="btn btn-secondary btn-sm">
               Contact Council Events Team
             </a>
           </div>

@@ -56,7 +56,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong>Email:</strong>{' '}
-                    <a href="mailto:contactus@geelongcity.vic.gov.au">contactus@geelongcity.vic.gov.au</a>
+                    <a href="mailto:contactus@harborview.vic.gov.au">contactus@harborview.vic.gov.au</a>
                   </div>
                   <div>
                     <strong>Postal Address:</strong> PO Box 104, Harborview VIC 3220
@@ -109,7 +109,7 @@ export default function ContactPage() {
                     70 City Square Drive, Harborview VIC 3220
                   </span>
                   <a
-                    href="https://maps.google.com/?q=70+Gheringhap+St+Harborview+VIC+3220"
+                    href="https://maps.google.com/?q=25+City+Square+Drive+Harborview+VIC+3220"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-gold btn-sm"
